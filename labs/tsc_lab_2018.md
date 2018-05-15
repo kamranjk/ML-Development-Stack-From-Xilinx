@@ -131,5 +131,5 @@ You should now be connected to the remote F1 instance running Centos 7.
 [Xilinx ML Suite]: https://github.com/Xilinx/ML-Suite
 [Batch Classification example]: https://github.com/Xilinx/ML-Suite/blob/master/pythonexample.md
 [Start Part 1: Image Classification with Python APIs]: tsc_part1.md
-[tsc_lab_keys.zip]: keys/tsc_lab_keys.zip
+[tsc_lab_keys.zip]: https://github.com/kamranjk/ML-Development-Stack-From-Xilinx/raw/tsc2018/labs/keys/tsc_lab_keys.zip
 [download from here]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
