@@ -60,19 +60,26 @@ You can now connect to your instance using ssh. You can do this in Linux or Wind
 ##### Linux
 1. Open a Terminal.
 
-2. Download [tsc_lab.pem][] and save it in your current working directory.
+2. Download [tsc_lab_keys.zip][] and save it in your current working directory and unzip.
 
 3. Execute the following ssh connection command:
 
     Use the following command if you are behind a Xilinx Firewall:
+
+    For CentOS 7 or later:
+
     ```sh
     ssh -i tsc_lab.pem -o "ProxyCommand /usr/bin/ncat --proxy-type socks4 --proxy proxy:1080 %h %p" centos@<public-ip>
     ```
-
+    For Older OS versions use:
+    ```sh
+    ssh -i tsc_lab.pem -o "ProxyCommand /usr/bin/nc -x proxy:1080 %h %p" centos@<public-ipv4-address>
+    ```
     Use the following command if you are *not* behind a Xilinx Firewall:
     ```sh
     ssh -i tsc_lab.pem -o centos@<public-ip>
     ```
+
     **Note**: Replace `<public-ip>` with the **IPv4 Public IP** address for the instance assigned to you.
 
 4. Type `yes` when prompted to connect.
@@ -83,15 +90,15 @@ You can now connect to your instance using ssh. You can do this in Linux or Wind
 You should now be connected to the remote F1 instance running Centos 7.
 
 ##### Windows
-1. Download [tsc_lab.ppk][] and save it in your current working directory.
+1. Download [tsc_lab_keys.zip][] and save it in your current working directory and unzip.
 2. Launch PuTTY. If required, [download from here][].
-3. Enter the following PuTTY session configuration details: 
+3. Enter the following PuTTY session configuration details:
 
-* **Host Name**: Enter **centos@** followed by your **IPv4 Public Address**. 
+* **Host Name**: Enter **centos@** followed by your **IPv4 Public Address**.
 
 * **Connection Type**: Set to **SSH**
 
-* **Port**: Leave at the default **22** 
+* **Port**: Leave at the default **22**
 
    See the following figure for reference.
 
@@ -124,6 +131,5 @@ You should now be connected to the remote F1 instance running Centos 7.
 [Xilinx ML Suite]: https://github.com/Xilinx/ML-Suite
 [Batch Classification example]: https://github.com/Xilinx/ML-Suite/blob/master/pythonexample.md
 [Start Part 1: Image Classification with Python APIs]: tsc_part1.md
-[tsc_lab.pem]: keys/tsc_lab.pem
-[tsc_lab.ppk]: keys/tsc_lab.ppk
+[tsc_lab_keys.zip]: keys/tsc_lab_keys.zip
 [download from here]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html

@@ -102,9 +102,9 @@ Ready? Let's begin.
 	# cd /xlnx/xfdnn_tools/compile/
 	```
 
-5. The next command will execute the GoogLeNet-v1 compiler using a prototxt for caffe. Here, you will pass the GoogLeNetv1 prototxt and the caffemodel from the `models/flowers102` dir. 
+5. The next command will execute the GoogLeNet-v1 compiler using a prototxt for caffe. Here, you will pass the GoogLeNetv1 prototxt and the caffemodel from the `models/flowers102` dir.
 
-**Note**: In step 2 you entered the caffe container, which is needed to run the xfDNN tools. Outside the container, the dir structure is `/home/centos/xfdnn_18_04_02/...`, within the container this maps to `/xlnx/`.
+    **Note**: In step 2 you entered the caffe container, which is needed to run the xfDNN tools. Outside the container, the dir structure is `/home/centos/xfdnn_18_04_02/...`, within the container this maps to `/xlnx/`.
 
     The compiler version you will use is `xf_dnn_compiler_inflamable.pyc`. The associated parameters are:
     - `[-n,]` - Input prototxt for compiler
@@ -125,7 +125,7 @@ Ready? Let's begin.
 
     Execute your python command with the above arguments set:
     ```shell
-    /xlnx/xfdnn_tools/compile# python tests/xfdnn_compiler_inflammable.pyc /
+    /xlnx/xfdnn_tools/compile# python tests/xfdnn_compiler_inflammable.pyc \
     -n /xlnx/models/flowers102/fp32/bvlc_googlenet_without_lrn_deploy.prototxt \
     -s all -m 4 -i 28 \
     -g /xlnx/models/flowers102/flowers102_googlenet.cmd \
@@ -155,7 +155,7 @@ Ready? Let's begin.
     /xlnx/xfdnn_tools/quantize#
   	```
 
-7. In this lab, you will use the `qunatize.pyc` tool. The parameters are:
+7. In this lab, you will use the `quantize.pyc` tool. The parameters are:
     - `--deploy_model` - This input will be the prototxt for the network/model you want to quantize.
     - `--weights` - This input will the fp32  caffemodel.
     - `--calibration_directory` - This is where the original data set is located, which was used to train the model.
