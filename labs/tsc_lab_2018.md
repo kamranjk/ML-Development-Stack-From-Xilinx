@@ -62,7 +62,12 @@ You can now connect to your instance using ssh. You can do this in Linux or Wind
 
 2. Download [tsc_lab_keys.zip][] and save it in your current working directory and unzip.
 
-3. Execute the following ssh connection command:
+3. Change the permissions of the **tsc_lab.pem** to **read only**.
+    ```sh
+    chmod 400 tsc_lab.pem
+    ```
+
+4. Execute the following ssh connection command:
 
     Use the following command if you are behind a Xilinx Firewall:
 
@@ -82,7 +87,7 @@ You can now connect to your instance using ssh. You can do this in Linux or Wind
 
     **Note**: Replace `<public-ip>` with the **IPv4 Public IP** address for the instance assigned to you.
 
-4. Type `yes` when prompted to connect.
+5. Type `yes` when prompted to connect.
     ```sh
     RSA key fingerprint is f9:f4:05:da:40:99:00:9d:1e:8f:95:de:89:6a:3f:cd.
     Are you sure you want to continue connecting (yes/no)? yes
